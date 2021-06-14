@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     padding: size(3)
   },
   calloutButton: {
-    backgroundColor: color("orange", 30),
+    backgroundColor: color("green", 30),
     flexDirection: "row",
     alignItems: "center",
     height: size(6),
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 0
   },
   calloutButtonText: {
-    color: color("grey", 40),
+    color: color("grey", 0),
     fontWeight: "bold",
     marginLeft: size(1.5)
   }
@@ -71,9 +71,9 @@ export const EmptyDocumentList: FunctionComponent<EmptyDocumentList> = ({
         onPress={onAdd}
       >
         {Platform.OS === "web" ? (
-          <QRWebIcon width={20} height={20} fill={color("grey", 40)} />
+          <QRWebIcon width={20} height={20} fill={color("grey", 0)} />
         ) : (
-          <QRIcon width={20} height={20} fill={color("grey", 40)} />
+          <QRIcon width={20} height={20} fill={color("grey", 0)} />
         )}
         <Text style={styles.calloutButtonText}>Scan to add</Text>
       </TouchableOpacity>

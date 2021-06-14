@@ -65,7 +65,7 @@ export const BottomNav: FunctionComponent<NavigationProps> = ({
             style={{
               color:
                 currentRoute === "DocumentListScreen"
-                  ? color("orange", 40)
+                  ? color("green", 30)
                   : color("grey", 30)
             }}
           />
@@ -77,7 +77,7 @@ export const BottomNav: FunctionComponent<NavigationProps> = ({
               height={size(2)}
               fill={
                 currentRoute === "QrScannerScreen"
-                  ? color("orange", 40)
+                  ? color("green", 30)
                   : color("grey", 30)
               }
             />
@@ -87,7 +87,7 @@ export const BottomNav: FunctionComponent<NavigationProps> = ({
               height={size(2.5)}
               fill={
                 currentRoute === "QrScannerScreen"
-                  ? color("orange", 40)
+                  ? color("green", 30)
                   : color("grey", 30)
               }
             />
@@ -100,7 +100,7 @@ export const BottomNav: FunctionComponent<NavigationProps> = ({
             style={{
               color:
                 currentRoute === "SettingsScreen"
-                  ? color("orange", 40)
+                  ? color("green", 30)
                   : color("grey", 30)
             }}
           />

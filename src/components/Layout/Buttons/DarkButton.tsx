@@ -12,10 +12,10 @@ export const DarkButton: FunctionComponent<DarkButton> = ({
   onPress,
   text
 }) => (
-  <BaseButton onPress={onPress} backgroundColor={color("orange", 30)}>
+  <BaseButton onPress={onPress} backgroundColor={color("green", 30)}>
     <Text
       style={{
-        color: color("grey", 40),
+        color: color("grey", 0),
         fontWeight: "bold",
         fontSize: fontSize(-2)
       }}

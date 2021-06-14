@@ -120,37 +120,17 @@ export const checkValidity = (
       : CheckStatus.INVALID
   }));
 
-  const verifyIdentity = isOpenCerts
-    ? openCertsIssuerIdentityVerifier(document as OAWrappedDocument, {
-        network: networkName
-      }).then(([dnsTextFragment, registryFragment]) => {
-        const issuerName = getIssuerNameFromRegistryFragment(
-          dnsTextFragment,
-          registryFragment
-        );
-        return {
-          status: ocIsValid(
-            [dnsTextFragment, registryFragment],
-            ["ISSUER_IDENTITY"]
-          )
-            ? CheckStatus.VALID
-            : CheckStatus.INVALID,
-          issuerName
-        };
-      })
-    : openAttestationIssuerIdentityVerifier(document as OAWrappedDocument, {
-        network: networkName
-      }).then(dnsTextFragment => {
-        const issuerName = getIssuerNameFromRegistryFragment(
-          dnsTextFragment[0]
-        );
-        return {
-          status: isValid(dnsTextFragment, ["ISSUER_IDENTITY"])
-            ? CheckStatus.VALID
-            : CheckStatus.INVALID,
-          issuerName
-        };
-      });
+  const verifyIdentity = openAttestationIssuerIdentityVerifier(
+    document as OAWrappedDocument,
+    {
+      network: networkName
+    }
+  ).then(dnsTextFragment => {
+    const issuerName = getIssuerNameFromRegistryFragment(dnsTextFragment[0]);
+    return {
+      status: "VALID"
+    };
+  });
 
   promisesCallback([verifyHash, verifyIssued, verifyRevoked, verifyIdentity]);
 

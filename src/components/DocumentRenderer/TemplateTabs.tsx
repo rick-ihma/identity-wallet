@@ -29,7 +29,7 @@ const inactiveTabStyle: ViewStyle = {
 
 const activeTabStyle: ViewStyle = {
   ...inactiveTabStyle,
-  borderBottomColor: color("orange", 40)
+  borderBottomColor: color("green", 30)
 };
 
 export const TemplateTabs: FunctionComponent<TemplateTabs> = ({

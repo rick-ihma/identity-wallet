@@ -27,7 +27,7 @@ export const decodeAction = (data: string): Action => {
   }
   try {
     const encodedAction = data.match(universalTransferDataRegex)![1];
-    const decodedAction = JSON.parse(decodeURI(encodedAction));
+    const decodedAction = JSON.parse(decodeURIComponent(encodedAction));
     validateAction(decodedAction);
     return decodedAction;
   } catch (e) {
